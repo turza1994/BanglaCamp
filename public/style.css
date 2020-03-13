@@ -1,0 +1,116 @@
+.grd{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+}
+.side{
+    text-align: center;
+}
+.side table{
+    margin: 0 auto;
+}
+.side table tr td{
+    border: 1px solid #aaa;
+    padding: 7px 200px 7px 7px;
+}
+
+.main{
+    width: 80%;
+    justify-self: center;
+}
+.main img{
+    padding: 0;
+    height: 400px;
+    width: 100%;
+    object-fit: fill;
+}
+.main h4{
+    margin-top: 4px;
+}
+.pricing{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+#left{
+    justify-self: start;
+}
+#right{
+    justify-self: end;
+    margin-left: 60px;
+}
+.main .desc .update-delete{
+    width: 180px;
+}
+
+.secondary.segment{
+    margin-top: 50px;
+    overflow: auto;
+    clear: both;
+}
+.segment{
+    overflow: auto;
+    clear: both;
+}
+.segment a{
+    float: right;   
+}
+.segment p{
+    clear: both;
+    font-size: 14px;
+}
+.green.button{
+    margin-bottom: 5px;
+}
+.update-delete-comment form{
+    width: 100px;
+    height: 50px;
+    /* border: 1px solid black; */
+}
+
+
+
+/* ==============
+Login Page starts
+========== =====*/
+#login{
+    width: 70%;
+    margin: 50px auto 50px auto;
+}
+#login form{
+    width: 50%;
+    margin: auto;
+}
+#login form input[type="submit"]{
+    margin: 10px 37%;
+}
+
+
+/* ==============
+Login Page ends
+========== =====*/
+
+/* ================
+Register Page starts
+========== =======*/
+#register{
+    width: 70%;
+    margin: 50px auto 50px auto;
+}
+#register form{
+    width: 50%;
+    margin: auto;
+}
+#register form input[type="submit"]{
+    margin: 10px 37%;
+}
+
+/* ================
+Register Page ends
+========== =======*/
+
+/* #update a:link, a:visited{
+    color: green;
+}
+#update a:hover, a:active{
+    color: white;
+} */
+
