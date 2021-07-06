@@ -31,7 +31,17 @@ var commentRoutes   = require("./routes/comments");
 //   client.close();
 // });
 
-mongoose.connect("mongodb+srv://turza:1234@yelpcamp-usdgg.mongodb.net/test?retryWrites=true&w=majority");
+// mongoose.connect("mongodb+srv://turza:1234@yelpcamp-usdgg.mongodb.net/test?retryWrites=true&w=majority", {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true
+// });
+
+mongoose.connect("mongodb+srv://turza:12345@yelpcamp.usdgg.mongodb.net/test?retryWrites=true&w=majority", {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+});
+
+
 
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended: true}));
