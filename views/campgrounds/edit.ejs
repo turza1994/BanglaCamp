@@ -1,13 +1,32 @@
-<% include ../partials/header %>
+<%- include ('../partials/header') %>
 <div class="container">
-    <h1>Add new campground</h1>
-    <form action="/campgrounds/<%= campground._id %>?_method=PUT" method="post">
-        <label for="name">Campground name: </label><input type="text" name="camp[name]" class="form-control" value="<%= campground.name %>" >
-        <label for="image">Campground image: </label><input type="text" name="camp[image]" class="form-control" value="<%= campground.image %>" >
-        <label for="description">Description: </label><input type="text" name="camp[description]" class="form-control" id="description" value="<%= campground.desc %>" >
-        <input type="submit" class="btn btn-lg btn-default">
-    </form>
-    <a href="/campgrounds">Go back</a>
+  <h1>Add new campground</h1>
+  <form action="/campgrounds/<%= campground._id %>?_method=PUT" method="post">
+    <label for="name">Campground name: </label
+    ><input
+      type="text"
+      name="camp[name]"
+      class="form-control"
+      value="<%= campground.name %>"
+    />
+    <label for="image">Campground image: </label
+    ><input
+      type="text"
+      name="camp[image]"
+      class="form-control"
+      value="<%= campground.image %>"
+    />
+    <label for="description">Description: </label
+    ><input
+      type="text"
+      name="camp[description]"
+      class="form-control"
+      id="description"
+      value="<%= campground.desc %>"
+    />
+    <input type="submit" class="btn btn-lg btn-default" />
+  </form>
+  <a href="/campgrounds">Go back</a>
 </div>
 
-<% include ../partials/footer %>
+<%- include ('../partials/footer') %>

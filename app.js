@@ -36,13 +36,17 @@ var commentRoutes = require('./routes/comments')
 //     useUnifiedTopology: true
 // });
 
-mongoose.connect(
-  'mongodb+srv://turza:12345@yelpcamp.usdgg.mongodb.net/test?retryWrites=true&w=majority',
-  {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  }
-)
+const connectDB = async () => {
+  await mongoose.connect(
+    'mongodb+srv://bangla-camp:bangla-camp@yelpcamp.usdgg.mongodb.net/test?retryWrites=true&w=majority',
+    {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    }
+  )
+  console.log('connected')
+}
+connectDB()
 
 app.use(express.static('public'))
 app.use(bodyParser.urlencoded({ extended: true }))

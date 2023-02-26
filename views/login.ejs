@@ -1,15 +1,17 @@
-<% include partials/header %>
+<%- include ('partials/header') %>
 
 <div class="ui inverted very padded segment" id="login">
-    <h1 class="ui center aligned header">User Login !</h1>
-    <form action="/login" method="POST" class="ui inverted form">
-        <label for="username">Username</label>
-        <input type="text" name="username" placeholder="username">
-        <label for="password">Password</label>
-        <input type="password" name="password" placeholder="password"><br/>
-        <input type="submit" class="ui inverted blue button" value="Sign in">
-        <label class="ui inverted green header"> Don't have an account ? &nbsp &nbsp <a href="/register">Sign up</a></label>
-    </form>
+  <h1 class="ui center aligned header">User Login !</h1>
+  <form action="/login" method="POST" class="ui inverted form">
+    <label for="username">Username</label>
+    <input type="text" name="username" placeholder="username" />
+    <label for="password">Password</label>
+    <input type="password" name="password" placeholder="password" /><br />
+    <input type="submit" class="ui inverted blue button" value="Sign in" />
+    <label class="ui inverted green header">
+      Don't have an account ? &nbsp &nbsp <a href="/register">Sign up</a></label
+    >
+  </form>
 </div>
 
-<% include partials/footer %>
+<%- include ('partials/footer') %>

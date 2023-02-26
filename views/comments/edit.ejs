@@ -1,11 +1,20 @@
-<% include ../partials/header %>
+<%- include ('../partials/header') %>
 <div class="container">
-    <h1>Add new comment</h1>
-    <form action="/campgrounds/<%= campground._id %>/comments/<%= comment._id %>?_method=PUT" method="post">
-        <label for="comment">text: </label><input type="text" name="text" class="form-control" value="<%= comment.text %>">
-        <input type="submit" class="btn btn-lg btn-default">
-    </form>
-    <a href="/">Go back</a>
+  <h1>Add new comment</h1>
+  <form
+    action="/campgrounds/<%= campground._id %>/comments/<%= comment._id %>?_method=PUT"
+    method="post"
+  >
+    <label for="comment">text: </label
+    ><input
+      type="text"
+      name="text"
+      class="form-control"
+      value="<%= comment.text %>"
+    />
+    <input type="submit" class="btn btn-lg btn-default" />
+  </form>
+  <a href="/">Go back</a>
 </div>
 
-<% include ../partials/footer %>
+<%- include ('../partials/footer') %>

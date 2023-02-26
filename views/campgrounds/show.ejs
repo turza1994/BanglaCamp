@@ -1,55 +1,87 @@
-<% include ../partials/header %>
+<%- include ('../partials/header') %>
 <div class="grd">
-    <div class="side">
-        <div class="category">
-            <h2>Bangla Camp</h2>
-            <table>
-                <tr><td>Category 1</td></tr>
-                <tr><td>Category 2</td></tr>
-                <tr><td>Category 3</td></tr>
-            </table>
-        </div>
-        <div class="map">
-            <!-- here will be a map -->
-        </div>
+  <div class="side">
+    <div class="category">
+      <h2>Bangla Camp</h2>
+      <table>
+        <tr>
+          <td>Category 1</td>
+        </tr>
+        <tr>
+          <td>Category 2</td>
+        </tr>
+        <tr>
+          <td>Category 3</td>
+        </tr>
+      </table>
     </div>
-    <div class="ui raised segment main">
-        <h1><%= campground.name %></h1>
-        <img src="<%= campground.image %>" alt="camp1">
-        <div class="pricing">
-            <h4 id="left">Angel's landing</h4>
-            <h4 id="right">$9.00/night</h4>
-        </div>
-        <div class="desc">
-            <p><%= campground.desc %></p>
-            <p><em>submitted by <span> <%= campground.author.username %> </span></em></p>
-            <% if( currentUser && campground.author.id.equals(currentUser._id) ){ %>
-            <div class="update-delete">
-                <form action="/campgrounds/<%= campground._id %>?_method=DELETE" method="POST">
-                    <a class="ui inverted tiny green button" href="/campgrounds/<%= campground._id %>/edit"> update post</a>
-                    <input type="submit" class="ui inverted tiny red button" value="Delete">
-                </form>
-            </div>
-            <% } %>
-        </div>
-        <div class="ui secondary segment">
-            <a href="/campgrounds/<%= campground._id %>/comments/new" class="ui green button">Add new comment</a>
-            <% for(var i=0; i < campground.comments.length; i++){ %>
-                <div class="ui segment">
-                    <p>
-                        <b><%= campground.comments[i].author.username %>:</b> &nbsp &nbsp <%= campground.comments[i].text %>
-                        <% if( currentUser && campground.comments[i].author.id.equals(currentUser._id) ){ %>
-                        <span class="update-delete-comment">
-                            <form action="/campgrounds/<%= campground._id %>/comments/<%= campground.comments[i]._id %>?_method=DELETE" method="post">
-                                <a class="ui mini blue button" href="/campgrounds/<%= campground._id %>/comments/<%= campground.comments[i]._id %>/edit">update</a>
-                                <input type="submit" value="Delete" class="ui mini red button">
-                            </form>
-                        </span>
-                        <% } %>
-                    </p>
-                </div>
-            <% } %>  
-        </div>
+    <div class="map">
+      <!-- here will be a map -->
     </div>
+  </div>
+  <div class="ui raised segment main">
+    <h1><%= campground.name %></h1>
+    <img src="<%= campground.image %>" alt="camp1" />
+    <div class="pricing">
+      <h4 id="left">Angel's landing</h4>
+      <h4 id="right">$9.00/night</h4>
+    </div>
+    <div class="desc">
+      <p><%= campground.desc %></p>
+      <p>
+        <em>submitted by <span> <%= campground.author.username %> </span></em>
+      </p>
+      <% if( currentUser && campground.author.id.equals(currentUser._id) ){ %>
+      <div class="update-delete">
+        <form
+          action="/campgrounds/<%= campground._id %>?_method=DELETE"
+          method="POST"
+        >
+          <a
+            class="ui inverted tiny green button"
+            href="/campgrounds/<%= campground._id %>/edit"
+          >
+            update post</a
+          >
+          <input
+            type="submit"
+            class="ui inverted tiny red button"
+            value="Delete"
+          />
+        </form>
+      </div>
+      <% } %>
+    </div>
+    <div class="ui secondary segment">
+      <a
+        href="/campgrounds/<%= campground._id %>/comments/new"
+        class="ui green button"
+        >Add new comment</a
+      >
+      <% for(var i=0; i < campground.comments.length; i++){ %>
+      <div class="ui segment">
+        <p>
+          <b><%= campground.comments[i].author.username %>:</b> &nbsp &nbsp <%=
+          campground.comments[i].text %> <% if( currentUser &&
+          campground.comments[i].author.id.equals(currentUser._id) ){ %>
+          <span class="update-delete-comment">
+            <form
+              action="/campgrounds/<%= campground._id %>/comments/<%= campground.comments[i]._id %>?_method=DELETE"
+              method="post"
+            >
+              <a
+                class="ui mini blue button"
+                href="/campgrounds/<%= campground._id %>/comments/<%= campground.comments[i]._id %>/edit"
+                >update</a
+              >
+              <input type="submit" value="Delete" class="ui mini red button" />
+            </form>
+          </span>
+          <% } %>
+        </p>
+      </div>
+      <% } %>
+    </div>
+  </div>
 </div>
-<% include ../partials/footer %>
+<%- include ('../partials/footer') %>
